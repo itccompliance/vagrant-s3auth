@@ -66,7 +66,7 @@ module VagrantPlugins
       end
 
       def self.s3_url_for(method, s3_object)
-        s3_object.presigned_url(method, expires_in: 60 * 10)
+        s3_object.presigned_url(method, expires_in: 60 * 10, use_accelerate_endpoint: true)
       end
 
       def self.get_bucket_region(bucket)
